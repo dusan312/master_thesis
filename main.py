@@ -101,5 +101,5 @@ if __name__ == '__main__':
         model_load_name = model_save_name+dt_string + ''
         model_save_name = model_save_name+dt_string.strip('.pth') + '_classTest.pth'
         print(ClassTrain_STL10(frz, folder, dataset_folder, model_save_name, model_load_name, save, load,
-                               lr_class, batch_class, n_epochs_class, load_second_part, save_second_part, writerCL))
+                               lr_class, batch_class, n_epochs_class, load_second_part, save_second_part, writerCL, gpu_n))
 
