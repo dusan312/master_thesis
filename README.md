@@ -3,7 +3,7 @@ Repository with all source files for my Master thesis
 
 In order to start training, change the hyperparameters 
 inside the main.py file, and then run it with opotional 
-second argument "--gpu1" if you want to run it on cuda device with index 0.
+second argument "--gpu1" if you want to run it on cuda device with index 0, otherwise it will be runed on cuda device with index 1.
 
 Hyperparameters:
 
