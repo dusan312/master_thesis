@@ -4,6 +4,7 @@ from datetime import datetime
 from ClassTrain_STL10 import ClassTrain_STL10
 from SSTrainRotation import SSTrainRotation_STL10
 import os
+import sys
 import zipfile
 
 '''
@@ -14,11 +15,6 @@ type = 'rotSS' # 'mySS' or 'rotSS' or 'class'
 ###### if type is 'class'
 cluster=True
 ######
-import sys
-if sys.argv[1] == '--gpu1':
-    gpu_n = 'cuda:0'
-else:
-    gpu_n = 'cuda:1'
 dataset = 'stl10'
 learning_rate = 0.0003
 lr_class = 0.0003
@@ -40,6 +36,7 @@ frz = True
 '''
 Until here
 '''
+
 def zipdir(path, ziph):
     # ziph is zipfile handle
     for root, dirs, files in os.walk(path):
@@ -49,7 +46,12 @@ def zipdir(path, ziph):
 
 
 if __name__ == '__main__':
-
+    
+    if sys.argv[1] == '--gpu1':
+        gpu_n = 'cuda:0'
+    else:
+        gpu_n = 'cuda:1'
+    
     if cluster:
         folder = '../../../data/cvg/dusan/experiments'+folder.strip('.')
 
